@@ -8,13 +8,44 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             height: 100vh;
             margin: 0;
             background-color: #f4f4f9;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Content area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
             text-align: center;
+            width: 100%;
         }
 
         h1 {
@@ -31,30 +62,6 @@
             margin-bottom: 20px;
         }
 
-        .button-container {
-            margin-bottom: 20px;
-        }
-
-        .tab-button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .tab-button:hover {
-            background-color: #0056b3;
-        }
-
-        .visual {
-            display: none;
-        }
-
         iframe {
             border: none;
             margin-bottom: 20px;
@@ -69,53 +76,67 @@
     </style>
 </head>
 <body>
-    <h1>Interactive Dashboard</h1>
-    <p>Explore the impact of digitalization on entrepreneurship using the interactive Power BI dashboard below:</p>
-
-    <!-- Buttons to switch between visuals -->
-    <div class="button-container">
-        <button class="tab-button" onclick="showVisual(1)">Visual 1</button>
-        <button class="tab-button" onclick="showVisual(2)">Visual 2</button>
-        <button class="tab-button" onclick="showVisual(3)">Visual 3</button>
-        <!-- Add more buttons if necessary -->
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" onclick="showVisual(1)">EDA - Correlation Matrix</a>
+        <a href="#" onclick="showVisual(2)">RF Feature Importance</a>
+        <a href="#" onclick="showVisual(3)">Regression Coefficients</a>
+        <a href="#" onclick="showVisual(4)">Factor Loading</a>
     </div>
 
-    <!-- Visual 1 -->
-    <div id="visual1" class="visual">
-        <iframe 
-            title="Visual 1" 
-            width="1024" 
-            height="612" 
-            src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-            frameborder="0" 
-            allowFullScreen="true"></iframe>
-    </div>
+    <!-- Main content -->
+    <div class="content">
+        <h1>Interactive Dashboard</h1>
+        <p>Explore the impact of digitalization on entrepreneurship using the interactive Power BI dashboard below:</p>
 
-    <!-- Visual 2 -->
-    <div id="visual2" class="visual">
-        <iframe 
-            title="Visual 2" 
-            width="1024" 
-            height="612" 
-            src="https://app.powerbi.com/view?r=eyJrIjoiYzdmZTYwZjYtZTJlNi00OGM2LWI3ZmMtZGViMjVmY2YzZWM5IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-            frameborder="0" 
-            allowFullScreen="true"></iframe>
-    </div>
+        <!-- Visual 1 -->
+        <div id="visual1" class="visual">
+            <iframe 
+                title="Capstone 2 - Visual 1" 
+                width="1024" 
+                height="612" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+                frameborder="0" 
+                allowFullScreen="true"></iframe>
+        </div>
 
-    <!-- Visual 3 -->
-    <div id="visual3" class="visual">
-        <iframe 
-            title="Visual 3" 
-            width="1024" 
-            height="612" 
-            src="https://app.powerbi.com/view?r=eyJrIjoiMzYwZjczZTYtZDIwYS00MzRlLTk4MjctZTkzMmZiN2JmYTY2IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-            frameborder="0" 
-            allowFullScreen="true"></iframe>
-    </div>
+        <!-- Visual 2 -->
+        <div id="visual2" class="visual" style="display: none;">
+            <iframe 
+                title="Capstone 2 - Visual 2" 
+                width="1024" 
+                height="612" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiYzdmZTYwZjYtZTJlNi00OGM2LWI3ZmMtZGViMjVmY2YzZWM5IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+                frameborder="0" 
+                allowFullScreen="true"></iframe>
+        </div>
 
-    <footer>
-        <p>PRJ5158 CAPSTONE PROJECT II</p>
-    </footer>
+        <!-- Visual 3 -->
+        <div id="visual3" class="visual" style="display: none;">
+            <iframe 
+                title="Capstone 2 - Visual 3" 
+                width="1024" 
+                height="612" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiMzYwZjczZTYtZDIwYS00MzRlLTk4MjctZTkzMmZiN2JmYTY2IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+                frameborder="0" 
+                allowFullScreen="true"></iframe>
+        </div>
+
+        <!-- Visual 4 -->
+        <div id="visual4" class="visual" style="display: none;">
+            <iframe 
+                title="Capstone 2 - Visual 4" 
+                width="1024" 
+                height="612" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZDZjMTYyZmYtMGY5Ni00Y2EwLWI0ZjYtYjk2MjE4ZTAzYjc5IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+                frameborder="0" 
+                allowFullScreen="true"></iframe>
+        </div>
+
+        <footer>
+            <p>PRJ5158 CAPSTONE PROJECT II</p>
+        </footer>
+    </div>
 
     <script>
         // Function to show the selected visual and hide the others
@@ -135,7 +156,3 @@
     </script>
 </body>
 </html>
-
-</html>
-
-
