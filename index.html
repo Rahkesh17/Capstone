@@ -21,14 +21,38 @@
             font-size: 2.5rem;
             margin-top: 20px;
             padding: 20px;
-            border: 3px solid #333; /* Rectangle box around the title */
-            border-radius: 10px; /* Optional: Rounds the corners of the box */
-            background-color: #fff; /* Optional: Adds a white background inside the box */
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color: #fff;
         }
 
         p {
             font-size: 1.2rem;
             margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #0056b3;
+        }
+
+        .visual {
+            display: none;
         }
 
         iframe {
@@ -47,18 +71,71 @@
 <body>
     <h1>Interactive Dashboard</h1>
     <p>Explore the impact of digitalization on entrepreneurship using the interactive Power BI dashboard below:</p>
-    <iframe 
-        title="Capstone 2" 
-        width="1024" 
-        height="612" 
-        src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-        frameborder="0" 
-        allowFullScreen="true"></iframe>
+
+    <!-- Buttons to switch between visuals -->
+    <div class="button-container">
+        <button class="tab-button" onclick="showVisual(1)">Visual 1</button>
+        <button class="tab-button" onclick="showVisual(2)">Visual 2</button>
+        <button class="tab-button" onclick="showVisual(3)">Visual 3</button>
+        <!-- Add more buttons if necessary -->
+    </div>
+
+    <!-- Visual 1 -->
+    <div id="visual1" class="visual">
+        <iframe 
+            title="Visual 1" 
+            width="1024" 
+            height="612" 
+            src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+            frameborder="0" 
+            allowFullScreen="true"></iframe>
+    </div>
+
+    <!-- Visual 2 -->
+    <div id="visual2" class="visual">
+        <iframe 
+            title="Visual 2" 
+            width="1024" 
+            height="612" 
+            src="https://app.powerbi.com/view?r=eyJrIjoiYzdmZTYwZjYtZTJlNi00OGM2LWI3ZmMtZGViMjVmY2YzZWM5IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+            frameborder="0" 
+            allowFullScreen="true"></iframe>
+    </div>
+
+    <!-- Visual 3 -->
+    <div id="visual3" class="visual">
+        <iframe 
+            title="Visual 3" 
+            width="1024" 
+            height="612" 
+            src="https://app.powerbi.com/view?r=eyJrIjoiMzYwZjczZTYtZDIwYS00MzRlLTk4MjctZTkzMmZiN2JmYTY2IiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+            frameborder="0" 
+            allowFullScreen="true"></iframe>
+    </div>
 
     <footer>
-        <p>PRJ5158 CAPSTONE PROJECT II.</p>
+        <p>PRJ5158 CAPSTONE PROJECT II</p>
     </footer>
+
+    <script>
+        // Function to show the selected visual and hide the others
+        function showVisual(visualNumber) {
+            // Hide all visuals
+            var visuals = document.querySelectorAll('.visual');
+            visuals.forEach(function(visual) {
+                visual.style.display = 'none';
+            });
+
+            // Show the selected visual
+            document.getElementById('visual' + visualNumber).style.display = 'block';
+        }
+
+        // Show the first visual by default
+        showVisual(1);
+    </script>
 </body>
+</html>
+
 </html>
 
 
