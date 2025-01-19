@@ -3,60 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Dashboard - Impact of Digitalization on Entrepreneurship</title>
+    <title>Capstone Dashboard - Impact of Digitalization on Entrepreneurship</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
             background-color: #f4f4f9;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-top: 20px;
-            padding: 20px;
-            border: 3px solid #333; /* Rectangle box around the title */
-            border-radius: 10px; /* Optional: Rounds the corners of the box */
-            background-color: #fff; /* Optional: Adds a white background inside the box */
+            color: #333;
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
 
         iframe {
+            width: 100%;
+            height: 800px;
             border: none;
-            margin-bottom: 20px;
-            max-width: 90%;
-            max-height: 80vh;
         }
 
-        footer {
+        .footer {
+            text-align: center;
+            margin-top: 20px;
             font-size: 1rem;
-            color: #555;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <h1>Interactive Dashboard</h1>
-    <p>Explore the impact of digitalization on entrepreneurship using the interactive Power BI dashboard below:</p>
-    <iframe 
-        title="Capstone 2" 
-        width="1024" 
-        height="612" 
-        src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-        frameborder="0" 
-        allowFullScreen="true"></iframe>
+    <div class="container">
+        <h1>Capstone II Dashboard</h1>
+        <h2>Exploring the Impact of Digitalization on Entrepreneurship Using Machine Learning</h2>
+        <p>By Ahmed Shiyan Ibrahim, Rahkesh A/L Kumar, and Joshua Wong Jun Wen</p>
 
-    <footer>
-        <p>PRJ5158 CAPSTONE PROJECT II</p>
-    </footer>
+        <div class="iframe-container">
+            <iframe 
+                title="Capstone Dashboard" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
+                allowfullscreen="true">
+            </iframe>
+        </div>
+
+        <div class="footer">
+            <p>PRJ5158 Capstone Project II | 2024</p>
+        </div>
+    </div>
 </body>
 </html>
