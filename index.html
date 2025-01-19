@@ -16,38 +16,73 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
 
         h1 {
+            text-align: center;
             font-size: 2.5rem;
-            color: #333;
             margin-bottom: 10px;
+            color: #333;
         }
 
         h2 {
+            text-align: center;
             font-size: 1.5rem;
+            color: #666;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
             color: #555;
         }
 
-        .iframe-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
+        .card p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .chart {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         iframe {
             width: 100%;
-            height: 800px;
+            height: 300px;
             border: none;
         }
 
-        .footer {
+        footer {
+            margin-top: 30px;
             text-align: center;
-            margin-top: 20px;
-            font-size: 1rem;
             color: #777;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -57,17 +92,63 @@
         <h2>Exploring the Impact of Digitalization on Entrepreneurship Using Machine Learning</h2>
         <p>By Ahmed Shiyan Ibrahim, Rahkesh A/L Kumar, and Joshua Wong Jun Wen</p>
 
-        <div class="iframe-container">
-            <iframe 
-                title="Capstone Dashboard" 
-                src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D" 
-                allowfullscreen="true">
-            </iframe>
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Development Criteria</h3>
+                <p>High</p>
+            </div>
+            <div class="card">
+                <h3>Digital Infrastructure Index</h3>
+                <p>7.85</p>
+            </div>
+            <div class="card">
+                <h3>Digital Innovation Index</h3>
+                <p>-0.89</p>
+            </div>
+            <div class="card">
+                <h3>Entrepreneurship Likelihood</h3>
+                <p>Medium</p>
+            </div>
+            <div class="card">
+                <h3>GDP</h3>
+                <p>1.01</p>
+            </div>
+            <div class="card">
+                <h3>Digital Finance Index</h3>
+                <p>17.81</p>
+            </div>
+            <div class="card">
+                <h3>Entrepreneurship Index</h3>
+                <p>0.80</p>
+            </div>
+            <div class="card">
+                <h3>HDI</h3>
+                <p>16.27</p>
+            </div>
+            <div class="card">
+                <h3>Financial Development Index</h3>
+                <p>26.68</p>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>PRJ5158 Capstone Project II | 2024</p>
+        <div class="charts">
+            <div class="chart">
+                <h3>Entrepreneurship Index Over Time</h3>
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D"></iframe>
+            </div>
+            <div class="chart">
+                <h3>Digitalization Indexes Over Time</h3>
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D"></iframe>
+            </div>
+            <div class="chart">
+                <h3>Economic Performance Over Time</h3>
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZGVjOGU3MTAtZjYzNS00NDBkLWEwNmYtMjVmNjYyZDFiNGVkIiwidCI6IjUzN2MyYmUxLWZjZDQtNDVhOS04M2IzLTY2NTNlYWNjNTA3MCIsImMiOjEwfQ%3D%3D"></iframe>
+            </div>
         </div>
+
+        <footer>
+            <p>PRJ5158 Capstone Project II | 2024</p>
+        </footer>
     </div>
 </body>
 </html>
